@@ -9,23 +9,25 @@
 /* Begin PBXBuildFile section */
 		655939B21FDFC13E00E1031C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655939B11FDFC13E00E1031C /* AppDelegate.swift */; };
 		655939B51FDFC13E00E1031C /* DevScan.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 655939B31FDFC13E00E1031C /* DevScan.xcdatamodeld */; };
-		655939B71FDFC13E00E1031C /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655939B61FDFC13E00E1031C /* MasterViewController.swift */; };
-		655939B91FDFC13E00E1031C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655939B81FDFC13E00E1031C /* DetailViewController.swift */; };
-		655939BC1FDFC13E00E1031C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 655939BA1FDFC13E00E1031C /* Main.storyboard */; };
 		655939BE1FDFC13E00E1031C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 655939BD1FDFC13E00E1031C /* Assets.xcassets */; };
 		655939C11FDFC13E00E1031C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 655939BF1FDFC13E00E1031C /* LaunchScreen.storyboard */; };
+		655939C91FDFC1A700E1031C /* ScanHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655939C81FDFC1A700E1031C /* ScanHistoryViewController.swift */; };
+		655939CB1FDFC34500E1031C /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655939CA1FDFC34500E1031C /* ScanViewController.swift */; };
+		655939CE1FDFDAF600E1031C /* CoreDataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655939CD1FDFDAF600E1031C /* CoreDataCenter.swift */; };
+		657ADBA51FDFF52B00EC60FB /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657ADBA41FDFF52B00EC60FB /* AboutViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		655939AE1FDFC13E00E1031C /* DevScan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevScan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		655939B11FDFC13E00E1031C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		655939B41FDFC13E00E1031C /* DevScan.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DevScan.xcdatamodel; sourceTree = "<group>"; };
-		655939B61FDFC13E00E1031C /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		655939B81FDFC13E00E1031C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		655939BB1FDFC13E00E1031C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		655939BD1FDFC13E00E1031C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		655939C01FDFC13E00E1031C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		655939C21FDFC13E00E1031C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		655939C81FDFC1A700E1031C /* ScanHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanHistoryViewController.swift; sourceTree = "<group>"; };
+		655939CA1FDFC34500E1031C /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
+		655939CD1FDFDAF600E1031C /* CoreDataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataCenter.swift; sourceTree = "<group>"; };
+		657ADBA41FDFF52B00EC60FB /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AboutViewController.swift; path = ../../../../rookie/Desktop/DevScan/DevScan/AboutViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +60,26 @@
 		655939B01FDFC13E00E1031C /* DevScan */ = {
 			isa = PBXGroup;
 			children = (
+				655939CC1FDFDAD700E1031C /* DB */,
 				655939B11FDFC13E00E1031C /* AppDelegate.swift */,
-				655939B61FDFC13E00E1031C /* MasterViewController.swift */,
-				655939B81FDFC13E00E1031C /* DetailViewController.swift */,
-				655939BA1FDFC13E00E1031C /* Main.storyboard */,
+				655939C81FDFC1A700E1031C /* ScanHistoryViewController.swift */,
+				655939CA1FDFC34500E1031C /* ScanViewController.swift */,
+				657ADBA41FDFF52B00EC60FB /* AboutViewController.swift */,
 				655939BD1FDFC13E00E1031C /* Assets.xcassets */,
 				655939BF1FDFC13E00E1031C /* LaunchScreen.storyboard */,
 				655939C21FDFC13E00E1031C /* Info.plist */,
 				655939B31FDFC13E00E1031C /* DevScan.xcdatamodeld */,
 			);
 			path = DevScan;
+			sourceTree = "<group>";
+		};
+		655939CC1FDFDAD700E1031C /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				655939CD1FDFDAF600E1031C /* CoreDataCenter.swift */,
+			);
+			name = DB;
+			path = ../../../../rookie/Desktop/DevScan/DevScan/DB;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,7 +143,6 @@
 			files = (
 				655939C11FDFC13E00E1031C /* LaunchScreen.storyboard in Resources */,
 				655939BE1FDFC13E00E1031C /* Assets.xcassets in Resources */,
-				655939BC1FDFC13E00E1031C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,24 +153,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				657ADBA51FDFF52B00EC60FB /* AboutViewController.swift in Sources */,
+				655939C91FDFC1A700E1031C /* ScanHistoryViewController.swift in Sources */,
 				655939B51FDFC13E00E1031C /* DevScan.xcdatamodeld in Sources */,
 				655939B21FDFC13E00E1031C /* AppDelegate.swift in Sources */,
-				655939B71FDFC13E00E1031C /* MasterViewController.swift in Sources */,
-				655939B91FDFC13E00E1031C /* DetailViewController.swift in Sources */,
+				655939CB1FDFC34500E1031C /* ScanViewController.swift in Sources */,
+				655939CE1FDFDAF600E1031C /* CoreDataCenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		655939BA1FDFC13E00E1031C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				655939BB1FDFC13E00E1031C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		655939BF1FDFC13E00E1031C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -283,12 +288,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 366K8UG5Q9;
 				INFOPLIST_FILE = DevScan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = JD.DevScan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -297,12 +304,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 366K8UG5Q9;
 				INFOPLIST_FILE = DevScan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = JD.DevScan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
