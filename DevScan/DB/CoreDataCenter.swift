@@ -8,6 +8,9 @@
 
 import UIKit
 import CoreData
+import AVFoundation
+
+let kCoreDataCenter_SurportedMetaDataObjectType_Notification = "kCoreDataCenter_SurportedMetaDataObjectType_Notification"
 
 class CoreDataCenter {
     
@@ -17,7 +20,7 @@ class CoreDataCenter {
     }
     
     private init() {
-        
+        initialScanRange()
     }
     
     lazy var persistentContainer: NSPersistentContainer = {
@@ -29,6 +32,28 @@ class CoreDataCenter {
         })
         return container
     }()
+    static let kScanRangeKey = "kScanRangeKey"
+    
+    var _metadataObjectTypes: [AVMetadataObject.ObjectType]? = nil
+    lazy var metadataObjectTypes:[AVMetadataObject.ObjectType] = {
+        _metadataObjectTypes = UserDefaults.standard.object(forKey: CoreDataCenter.kScanRangeKey) as? [AVMetadataObject.ObjectType]
+        return _metadataObjectTypes!
+    }()
+    
+    func isSurportMetaDataType(type: AVMetadataObject.ObjectType) -> Bool {
+        let isSurported = UserDefaults.standard.value(forKey: type.rawValue) as? Bool
+        return isSurported ?? false
+    }
+    
+    func addSurportMetaDataType(type:AVMetadataObject.ObjectType, isSurported: Bool) {
+        UserDefaults.standard.set(isSurported, forKey: type.rawValue)
+        let info = [
+            "type":type,
+            "surport":isSurported
+            ] as [String : Any]
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: kCoreDataCenter_SurportedMetaDataObjectType_Notification), object: nil, userInfo: info)
+    }
+    
     
     func saveContext () {
         let context = persistentContainer.viewContext
@@ -40,5 +65,36 @@ class CoreDataCenter {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+        UserDefaults.standard.synchronize()
     }
+    
+    func initialScanRange() {
+        
+        let userDefault = UserDefaults.standard
+        if let _ = userDefault.object(forKey: CoreDataCenter.kScanRangeKey) {
+            
+        } else {
+            let scanArr : [AVMetadataObject.ObjectType] = [.qr,
+                                                           .ean8,
+                                                           .ean13,
+                                                           .upce,
+                                                           .code39,
+                                                           .code93,
+                                                           .code128,
+                                                           .code39Mod43,
+                                                           .aztec,
+                                                           .face,
+                                                           .dataMatrix,
+                                                           .interleaved2of5,
+                                                           .itf14,
+                                                           .pdf417,]
+            userDefault.setValue(scanArr, forKey: CoreDataCenter.kScanRangeKey)
+            scanArr.forEach({ (type) in
+                userDefault.setValue(true, forKey: type.rawValue)
+            })
+            
+        }
+    }
+    
+    
 }

@@ -8,10 +8,11 @@
 
 import UIKit
 
-class AboutViewController: UIViewController {
+class AboutViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "关于"
 
         // Do any additional setup after loading the view.
     }

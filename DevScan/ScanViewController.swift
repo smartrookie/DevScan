@@ -44,9 +44,13 @@ class ScanViewController: UIViewController {
         }
         output.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
         
-        output.metadataObjectTypes = [
-            .qr,
-        ];
+        var types : [AVMetadataObject.ObjectType] = []
+        CoreDataCenter.shared.metadataObjectTypes.forEach { (object) in
+            if CoreDataCenter.shared.isSurportMetaDataType(type: object) {
+                types.append(object)
+            }
+        }
+        output.metadataObjectTypes = types;
         
         let scanPreviewLayer = AVCaptureVideoPreviewLayer(session: scanSession)
         scanPreviewLayer.videoGravity = .resizeAspectFill
@@ -85,11 +89,17 @@ class ScanViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    func insertNewObject(_ sender: Any) {
+    func insertNewObject(_ result: AVMetadataObject) {
         let context = self.managedObjectContext!
         let object = DSMetadataObject(context: context)
         
         object.timestamp = Date()
+        object.type = result.type.rawValue
+//        object.bounds = result.bounds?
+//        object.duration = result.duration?
+        if result is AVMetadataMachineReadableCodeObject {
+            object.stringValue = (result as! AVMetadataMachineReadableCodeObject).stringValue
+        }
         
         do {
             try context.save()
@@ -104,12 +114,13 @@ extension ScanViewController : AVCaptureMetadataOutputObjectsDelegate {
     
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         scanSession.stopRunning()
-        if metadataObjects.count > 0 {
-            let result = metadataObjects.first as! AVMetadataMachineReadableCodeObject
         
-            dismiss(animated: true, completion: {
-                self.insertNewObject(result)
-            })
+        metadataObjects.forEach { (object) in
+            insertNewObject(object)
         }
+        
+        dismiss(animated: true, completion: {
+            CoreDataCenter.shared.saveContext()
+        })
     }
 }

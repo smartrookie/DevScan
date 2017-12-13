@@ -21,7 +21,12 @@ class ScanHistoryViewController: UITableViewController , NSFetchedResultsControl
         
         let leftBarButton = UIBarButtonItem(image:UIImage(named:"扫一扫"), style:.plain, target: self, action: #selector(scanCamera))
         navigationItem.leftBarButtonItem = leftBarButton
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.register(ScanHistoryTableViewCell.self, forCellReuseIdentifier: "Cell")
+        
+        let rightBarButton = UIBarButtonItem(image: UIImage(named: "设置"), style: .plain, target: self, action: #selector(settingPage))
+        navigationItem.rightBarButtonItem = rightBarButton
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     
     @objc func scanCamera() {
@@ -29,6 +34,11 @@ class ScanHistoryViewController: UITableViewController , NSFetchedResultsControl
         scanViewController.managedObjectContext = self.managedObjectContext
         let navigationController = UINavigationController(rootViewController: scanViewController)
         present(navigationController, animated: true, completion: nil)
+    }
+    
+    @objc func settingPage() {
+        let settingsViewController = SettingsViewController(style: .grouped)
+        navigationController?.pushViewController(settingsViewController, animated: true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -45,6 +55,10 @@ class ScanHistoryViewController: UITableViewController , NSFetchedResultsControl
         return sectionInfo.numberOfObjects
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let event = fetchedResultsController.object(at: indexPath)
@@ -54,7 +68,23 @@ class ScanHistoryViewController: UITableViewController , NSFetchedResultsControl
     }
     
     func configureCell(_ cell: UITableViewCell, withObject object: DSMetadataObject) {
-        cell.textLabel!.text = object.timestamp!.description
+        cell.textLabel!.text = object.type!.description
+        cell.detailTextLabel?.text = object.stringValue?.description
+        
+        var iconName : String = ""
+        switch object.type!.description {
+        case "org.iso.QRCode":
+            iconName = "二维码扫描"
+        case "face":
+            iconName = "人脸扫描"
+        case "org.iso.Code128","org.gs1.EAN-8","org.gs1.EAN-13":
+            iconName = "条形码扫描"
+        default:
+            iconName = ""
+        }
+        let iconImage = UIImage(named:iconName)
+        
+        cell.imageView?.image = iconImage
     }
 
     
