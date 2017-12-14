@@ -17,12 +17,12 @@ class ScanViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "扫描二维码"
+        title = "扫描"
         
         let leftBarButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelAction))
         navigationItem.leftBarButtonItem = leftBarButton
         
-        let rightBarButton = UIBarButtonItem(image:UIImage(named:"相册"), style:.plain, target:self, action:nil)
+        let rightBarButton = UIBarButtonItem(image:UIImage(named:"相册"), style:.plain, target:self, action:#selector(openAlbumAction))
         navigationItem.rightBarButtonItem = rightBarButton
         
         let device = AVCaptureDevice.default(for: .video)
@@ -123,4 +123,72 @@ extension ScanViewController : AVCaptureMetadataOutputObjectsDelegate {
             CoreDataCenter.shared.saveContext()
         })
     }
+}
+
+extension ScanViewController : UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+    
+   @objc func openAlbumAction() {
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.delegate = self
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        //print(info)
+        let image = info["UIImagePickerControllerOriginalImage"] as! UIImage
+        let inputImage = CIImage(image: image)
+        
+        let ciContext = CIContext(options: [kCIContextUseSoftwareRenderer:true])
+        let detectorType = CIDetectorTypeQRCode
+    
+        let detector = CIDetector(ofType: detectorType, context: ciContext, options: [CIDetectorAccuracy:CIDetectorAccuracyHigh])
+    
+        if let features : [CIQRCodeFeature] = detector!.features(in: inputImage!) as? [CIQRCodeFeature]{
+            //print(features)
+            features.forEach({ (feature) in
+                insertNewObject(feature: feature)
+            })
+            
+            picker.dismiss(animated: true, completion: nil)
+        }
+        /*
+        detectorType = CIDetectorTypeFace
+        detector = CIDetector(ofType: detectorType, context: ciContext, options: [CIDetectorAccuracy:CIDetectorAccuracyHigh])
+    
+        var features : [CIFaceFeature]?
+        if let orientation:[kCGImagePropertyOrientation] = inputImage!.properties()?[kCGImagePropertyOrientation] {
+            feature = detector?.features(in: inputImage!, options: [CIDetectorImageOrientation:orientation])
+        } else {
+            feature = detector?.features(in: inputImage!)
+        }
+        features?.forEach({ (feature) in
+            insertNewObject(feature: feature)
+        })
+         */
+        
+    }
+    
+    func insertNewObject(feature: CIFeature) {
+        
+        if feature is CIQRCodeFeature {
+            let qrFeature = feature as! CIQRCodeFeature
+            let context = self.managedObjectContext!
+            let object = DSMetadataObject(context: context)
+            object.type = "org.iso.QRCode"
+            object.stringValue = qrFeature.messageString
+            object.timestamp = Date()
+            
+            do {
+                try context.save()
+            } catch {
+                let nserror = error as NSError
+                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            }
+        }
+        
+        
+    }
+    
+    
 }

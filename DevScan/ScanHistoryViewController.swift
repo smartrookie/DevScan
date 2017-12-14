@@ -109,6 +109,12 @@ class ScanHistoryViewController: UITableViewController , NSFetchedResultsControl
             
         }    
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let metaData = fetchedResultsController.object(at: indexPath)
+        let detailController = ScanDetailFactory.factory(metaObject: metaData)
+        navigationController?.pushViewController(detailController, animated: true)
+    }
 
     /*
     // Override to support rearranging the table view.

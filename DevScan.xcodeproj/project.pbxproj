@@ -17,6 +17,8 @@
 		655939C91FDFC1A700E1031C /* ScanHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655939C81FDFC1A700E1031C /* ScanHistoryViewController.swift */; };
 		655939CB1FDFC34500E1031C /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655939CA1FDFC34500E1031C /* ScanViewController.swift */; };
 		655939CE1FDFDAF600E1031C /* CoreDataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655939CD1FDFDAF600E1031C /* CoreDataCenter.swift */; };
+		65705D2B1FE266F50048D062 /* ScanDetailFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65705D2A1FE266F50048D062 /* ScanDetailFactory.swift */; };
+		65705D2E1FE269F10048D062 /* ScanQRCodeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65705D2D1FE269F10048D062 /* ScanQRCodeDetailViewController.swift */; };
 		657ADBA51FDFF52B00EC60FB /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657ADBA41FDFF52B00EC60FB /* AboutViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,7 +37,9 @@
 		655939C81FDFC1A700E1031C /* ScanHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanHistoryViewController.swift; sourceTree = "<group>"; };
 		655939CA1FDFC34500E1031C /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
 		655939CD1FDFDAF600E1031C /* CoreDataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataCenter.swift; sourceTree = "<group>"; };
-		657ADBA41FDFF52B00EC60FB /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AboutViewController.swift; path = ../../../../rookie/Desktop/DevScan/DevScan/AboutViewController.swift; sourceTree = "<group>"; };
+		65705D2A1FE266F50048D062 /* ScanDetailFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanDetailFactory.swift; sourceTree = "<group>"; };
+		65705D2D1FE269F10048D062 /* ScanQRCodeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanQRCodeDetailViewController.swift; sourceTree = "<group>"; };
+		657ADBA41FDFF52B00EC60FB /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		FC8A72E62AA30483E859AF77 /* Pods_DevScan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DevScan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -81,13 +85,14 @@
 		655939B01FDFC13E00E1031C /* DevScan */ = {
 			isa = PBXGroup;
 			children = (
-				655939CC1FDFDAD700E1031C /* DB */,
 				655939B11FDFC13E00E1031C /* AppDelegate.swift */,
 				655939C81FDFC1A700E1031C /* ScanHistoryViewController.swift */,
 				6556DD6F1FE0C51E002AA4EA /* ScanHistoryTableViewCell.swift */,
 				655939CA1FDFC34500E1031C /* ScanViewController.swift */,
-				657ADBA41FDFF52B00EC60FB /* AboutViewController.swift */,
 				6556DD6C1FE0B6C9002AA4EA /* SettingsViewController.swift */,
+				65705D2C1FE2696B0048D062 /* ScanDetailController */,
+				655939CC1FDFDAD700E1031C /* DB */,
+				65F7DB1B1FE139D3009562F3 /* About */,
 				655939BD1FDFC13E00E1031C /* Assets.xcassets */,
 				655939BF1FDFC13E00E1031C /* LaunchScreen.storyboard */,
 				655939C21FDFC13E00E1031C /* Info.plist */,
@@ -103,6 +108,25 @@
 			);
 			name = DB;
 			path = ../../../../rookie/Desktop/DevScan/DevScan/DB;
+			sourceTree = "<group>";
+		};
+		65705D2C1FE2696B0048D062 /* ScanDetailController */ = {
+			isa = PBXGroup;
+			children = (
+				65705D2A1FE266F50048D062 /* ScanDetailFactory.swift */,
+				65705D2D1FE269F10048D062 /* ScanQRCodeDetailViewController.swift */,
+			);
+			name = ScanDetailController;
+			path = ../../../../rookie/Desktop/DevScan/DevScan/ScanDetailController;
+			sourceTree = "<group>";
+		};
+		65F7DB1B1FE139D3009562F3 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				657ADBA41FDFF52B00EC60FB /* AboutViewController.swift */,
+			);
+			name = About;
+			path = ../../../../rookie/Desktop/DevScan/DevScan/About;
 			sourceTree = "<group>";
 		};
 		F5D0C1E476E419F6C6581515 /* Frameworks */ = {
@@ -240,7 +264,9 @@
 			files = (
 				657ADBA51FDFF52B00EC60FB /* AboutViewController.swift in Sources */,
 				655939C91FDFC1A700E1031C /* ScanHistoryViewController.swift in Sources */,
+				65705D2E1FE269F10048D062 /* ScanQRCodeDetailViewController.swift in Sources */,
 				6556DD6D1FE0B6C9002AA4EA /* SettingsViewController.swift in Sources */,
+				65705D2B1FE266F50048D062 /* ScanDetailFactory.swift in Sources */,
 				6556DD701FE0C51E002AA4EA /* ScanHistoryTableViewCell.swift in Sources */,
 				655939B51FDFC13E00E1031C /* DevScan.xcdatamodeld in Sources */,
 				655939B21FDFC13E00E1031C /* AppDelegate.swift in Sources */,
