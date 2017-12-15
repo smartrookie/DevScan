@@ -77,7 +77,13 @@ class ScanHistoryViewController: UITableViewController , NSFetchedResultsControl
             iconName = "二维码扫描"
         case "face":
             iconName = "人脸扫描"
-        case "org.iso.Code128","org.gs1.EAN-8","org.gs1.EAN-13":
+        case        "org.iso.Code128",
+                    "org.gs1.EAN-8",
+                    "org.gs1.EAN-13",
+                    "org.iso.Code39",
+                    "org.iso.Code93",
+                    "org.iso.Code128",
+                    "org.iso.Code39Mod43":
             iconName = "条形码扫描"
         default:
             iconName = ""
