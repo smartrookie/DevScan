@@ -83,7 +83,7 @@ class CoreDataCenter {
                                                            .code128,
                                                            .code39Mod43,
                                                            .aztec,
-                                                           .face,
+                                                           //.face,
                                                            .dataMatrix,
                                                            .interleaved2of5,
                                                            .itf14,

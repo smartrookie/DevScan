@@ -20,7 +20,6 @@
 		65705D2B1FE266F50048D062 /* ScanDetailFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65705D2A1FE266F50048D062 /* ScanDetailFactory.swift */; };
 		65705D2E1FE269F10048D062 /* ScanQRCodeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65705D2D1FE269F10048D062 /* ScanQRCodeDetailViewController.swift */; };
 		65705D321FE373580048D062 /* ScanDetailContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65705D311FE373580048D062 /* ScanDetailContentTableViewCell.swift */; };
-		65705D341FE3B17B0048D062 /* QRString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65705D331FE3B17B0048D062 /* QRString.swift */; };
 		657ADBA51FDFF52B00EC60FB /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657ADBA41FDFF52B00EC60FB /* AboutViewController.swift */; };
 		65C9D7481FE3C88B002EF1FD /* ScanBarCodeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C9D7471FE3C88B002EF1FD /* ScanBarCodeDetailViewController.swift */; };
 		65C9D74A1FE3CE5D002EF1FD /* ScanFaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C9D7491FE3CE5D002EF1FD /* ScanFaceDetailViewController.swift */; };
@@ -63,7 +62,6 @@
 		65705D2A1FE266F50048D062 /* ScanDetailFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanDetailFactory.swift; sourceTree = "<group>"; };
 		65705D2D1FE269F10048D062 /* ScanQRCodeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanQRCodeDetailViewController.swift; sourceTree = "<group>"; };
 		65705D311FE373580048D062 /* ScanDetailContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanDetailContentTableViewCell.swift; sourceTree = "<group>"; };
-		65705D331FE3B17B0048D062 /* QRString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QRString.swift; path = ../../../../rookie/Desktop/DevScan/DevScan/QRString.swift; sourceTree = "<group>"; };
 		657ADBA41FDFF52B00EC60FB /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		65C9D7471FE3C88B002EF1FD /* ScanBarCodeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanBarCodeDetailViewController.swift; sourceTree = "<group>"; };
 		65C9D7491FE3CE5D002EF1FD /* ScanFaceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanFaceDetailViewController.swift; sourceTree = "<group>"; };
@@ -138,7 +136,6 @@
 				6556DD6F1FE0C51E002AA4EA /* ScanHistoryTableViewCell.swift */,
 				655939CA1FDFC34500E1031C /* ScanViewController.swift */,
 				6556DD6C1FE0B6C9002AA4EA /* SettingsViewController.swift */,
-				65705D331FE3B17B0048D062 /* QRString.swift */,
 				65705D2C1FE2696B0048D062 /* ScanDetailController */,
 				655939CC1FDFDAD700E1031C /* DB */,
 				65F7DB1B1FE139D3009562F3 /* About */,
@@ -363,7 +360,6 @@
 				65C9D7671FE75600002EF1FD /* RSCode39Mod43Generator.swift in Sources */,
 				655939C91FDFC1A700E1031C /* ScanHistoryViewController.swift in Sources */,
 				65705D2E1FE269F10048D062 /* ScanQRCodeDetailViewController.swift in Sources */,
-				65705D341FE3B17B0048D062 /* QRString.swift in Sources */,
 				6556DD6D1FE0B6C9002AA4EA /* SettingsViewController.swift in Sources */,
 				65C9D74A1FE3CE5D002EF1FD /* ScanFaceDetailViewController.swift in Sources */,
 				65C9D7701FE75600002EF1FD /* RSCornersLayer.swift in Sources */,

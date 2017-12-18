@@ -14,6 +14,7 @@ class ScanViewController: UIViewController {
     
     let scanSession = AVCaptureSession()
     var managedObjectContext: NSManagedObjectContext? = nil
+    let metadataOutput : AVCaptureMetadataOutput = AVCaptureMetadataOutput()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +32,7 @@ class ScanViewController: UIViewController {
             input = try AVCaptureDeviceInput(device: device!)
         } catch {}
         
-        let output = AVCaptureMetadataOutput()
+        let output = metadataOutput
         
         scanSession.canSetSessionPreset(.high)
         
@@ -42,6 +43,7 @@ class ScanViewController: UIViewController {
         if scanSession.canAddOutput(output) {
             scanSession.addOutput(output)
         }
+        
         output.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
         
         var types : [AVMetadataObject.ObjectType] = []
@@ -110,13 +112,28 @@ class ScanViewController: UIViewController {
     }
 }
 
-extension ScanViewController : AVCaptureMetadataOutputObjectsDelegate {
+extension ScanViewController : AVCaptureMetadataOutputObjectsDelegate ,AVCaptureVideoDataOutputSampleBufferDelegate{
+    
+    
+    func captureOutput(_ output: AVCaptureOutput, didDrop sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+        let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer)
+        if (pixelBuffer != nil) {
+            let attachments = CMCopyDictionaryOfAttachments(kCFAllocatorDefault, sampleBuffer, kCMAttachmentMode_ShouldPropagate)
+            let ciImage = CIImage(cvPixelBuffer: pixelBuffer!, options: attachments as? [String : Any])
+            let image = UIImage(ciImage: ciImage)
+            print("image = \(image)")
+        }
+    }
     
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         scanSession.stopRunning()
         
         metadataObjects.forEach { (object) in
-            insertNewObject(object)
+            if object.type == AVMetadataObject.ObjectType.face {
+                return
+            } else {
+                insertNewObject(object)
+            }
         }
         
         dismiss(animated: true, completion: {
@@ -150,7 +167,7 @@ extension ScanViewController : UIImagePickerControllerDelegate,UINavigationContr
                 insertNewObject(feature: feature)
             })
             
-            picker.dismiss(animated: true, completion: nil)
+            presentingViewController?.dismiss(animated: true, completion: nil)
         }
         /*
         detectorType = CIDetectorTypeFace
