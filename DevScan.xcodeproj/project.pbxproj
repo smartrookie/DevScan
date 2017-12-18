@@ -24,6 +24,25 @@
 		657ADBA51FDFF52B00EC60FB /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657ADBA41FDFF52B00EC60FB /* AboutViewController.swift */; };
 		65C9D7481FE3C88B002EF1FD /* ScanBarCodeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C9D7471FE3C88B002EF1FD /* ScanBarCodeDetailViewController.swift */; };
 		65C9D74A1FE3CE5D002EF1FD /* ScanFaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C9D7491FE3CE5D002EF1FD /* ScanFaceDetailViewController.swift */; };
+		65C9D7641FE75600002EF1FD /* RSEANGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C9D74D1FE75600002EF1FD /* RSEANGenerator.swift */; };
+		65C9D7651FE75600002EF1FD /* RSUnifiedCodeValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C9D74E1FE75600002EF1FD /* RSUnifiedCodeValidator.swift */; };
+		65C9D7661FE75600002EF1FD /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C9D74F1FE75600002EF1FD /* UIColorExtension.swift */; };
+		65C9D7671FE75600002EF1FD /* RSCode39Mod43Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C9D7501FE75600002EF1FD /* RSCode39Mod43Generator.swift */; };
+		65C9D7681FE75600002EF1FD /* RSCode39Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C9D7511FE75600002EF1FD /* RSCode39Generator.swift */; };
+		65C9D7691FE75600002EF1FD /* RSCodeReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C9D7521FE75600002EF1FD /* RSCodeReaderViewController.swift */; };
+		65C9D76A1FE75600002EF1FD /* RSITF14Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C9D7531FE75600002EF1FD /* RSITF14Generator.swift */; };
+		65C9D76B1FE75600002EF1FD /* RSCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C9D7551FE75600002EF1FD /* RSCodeGenerator.swift */; };
+		65C9D76C1FE75600002EF1FD /* RSCodeDataMatrixGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C9D7561FE75600002EF1FD /* RSCodeDataMatrixGenerator.swift */; };
+		65C9D76D1FE75600002EF1FD /* RSCode128Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C9D7581FE75600002EF1FD /* RSCode128Generator.swift */; };
+		65C9D76E1FE75600002EF1FD /* RSUnifiedCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C9D7591FE75600002EF1FD /* RSUnifiedCodeGenerator.swift */; };
+		65C9D76F1FE75600002EF1FD /* RSCodeLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C9D75A1FE75600002EF1FD /* RSCodeLayer.swift */; };
+		65C9D7701FE75600002EF1FD /* RSCornersLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C9D75B1FE75600002EF1FD /* RSCornersLayer.swift */; };
+		65C9D7711FE75600002EF1FD /* RSUPCEGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C9D75C1FE75600002EF1FD /* RSUPCEGenerator.swift */; };
+		65C9D7721FE75600002EF1FD /* RSCode93Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C9D75D1FE75600002EF1FD /* RSCode93Generator.swift */; };
+		65C9D7731FE75600002EF1FD /* RSFocusMarkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C9D75E1FE75600002EF1FD /* RSFocusMarkLayer.swift */; };
+		65C9D7741FE75600002EF1FD /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C9D75F1FE75600002EF1FD /* StringExtension.swift */; };
+		65C9D7751FE75600002EF1FD /* RSExtendedCode39Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C9D7601FE75600002EF1FD /* RSExtendedCode39Generator.swift */; };
+		65C9D7771FE75600002EF1FD /* RSITFGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C9D7621FE75600002EF1FD /* RSITFGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +67,26 @@
 		657ADBA41FDFF52B00EC60FB /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		65C9D7471FE3C88B002EF1FD /* ScanBarCodeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanBarCodeDetailViewController.swift; sourceTree = "<group>"; };
 		65C9D7491FE3CE5D002EF1FD /* ScanFaceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanFaceDetailViewController.swift; sourceTree = "<group>"; };
+		65C9D74D1FE75600002EF1FD /* RSEANGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSEANGenerator.swift; sourceTree = "<group>"; };
+		65C9D74E1FE75600002EF1FD /* RSUnifiedCodeValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSUnifiedCodeValidator.swift; sourceTree = "<group>"; };
+		65C9D74F1FE75600002EF1FD /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		65C9D7501FE75600002EF1FD /* RSCode39Mod43Generator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSCode39Mod43Generator.swift; sourceTree = "<group>"; };
+		65C9D7511FE75600002EF1FD /* RSCode39Generator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSCode39Generator.swift; sourceTree = "<group>"; };
+		65C9D7521FE75600002EF1FD /* RSCodeReaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSCodeReaderViewController.swift; sourceTree = "<group>"; };
+		65C9D7531FE75600002EF1FD /* RSITF14Generator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSITF14Generator.swift; sourceTree = "<group>"; };
+		65C9D7551FE75600002EF1FD /* RSCodeGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSCodeGenerator.swift; sourceTree = "<group>"; };
+		65C9D7561FE75600002EF1FD /* RSCodeDataMatrixGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSCodeDataMatrixGenerator.swift; sourceTree = "<group>"; };
+		65C9D7571FE75600002EF1FD /* RSBarcodes-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RSBarcodes-Bridging-Header.h"; sourceTree = "<group>"; };
+		65C9D7581FE75600002EF1FD /* RSCode128Generator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSCode128Generator.swift; sourceTree = "<group>"; };
+		65C9D7591FE75600002EF1FD /* RSUnifiedCodeGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSUnifiedCodeGenerator.swift; sourceTree = "<group>"; };
+		65C9D75A1FE75600002EF1FD /* RSCodeLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSCodeLayer.swift; sourceTree = "<group>"; };
+		65C9D75B1FE75600002EF1FD /* RSCornersLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSCornersLayer.swift; sourceTree = "<group>"; };
+		65C9D75C1FE75600002EF1FD /* RSUPCEGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSUPCEGenerator.swift; sourceTree = "<group>"; };
+		65C9D75D1FE75600002EF1FD /* RSCode93Generator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSCode93Generator.swift; sourceTree = "<group>"; };
+		65C9D75E1FE75600002EF1FD /* RSFocusMarkLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSFocusMarkLayer.swift; sourceTree = "<group>"; };
+		65C9D75F1FE75600002EF1FD /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		65C9D7601FE75600002EF1FD /* RSExtendedCode39Generator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSExtendedCode39Generator.swift; sourceTree = "<group>"; };
+		65C9D7621FE75600002EF1FD /* RSITFGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSITFGenerator.swift; sourceTree = "<group>"; };
 		FC8A72E62AA30483E859AF77 /* Pods_DevScan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DevScan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -93,6 +132,7 @@
 		655939B01FDFC13E00E1031C /* DevScan */ = {
 			isa = PBXGroup;
 			children = (
+				65C9D74B1FE755C0002EF1FD /* Third */,
 				655939B11FDFC13E00E1031C /* AppDelegate.swift */,
 				655939C81FDFC1A700E1031C /* ScanHistoryViewController.swift */,
 				6556DD6F1FE0C51E002AA4EA /* ScanHistoryTableViewCell.swift */,
@@ -130,6 +170,41 @@
 			);
 			name = ScanDetailController;
 			path = ../../../../rookie/Desktop/DevScan/DevScan/ScanDetailController;
+			sourceTree = "<group>";
+		};
+		65C9D74B1FE755C0002EF1FD /* Third */ = {
+			isa = PBXGroup;
+			children = (
+				65C9D74C1FE75600002EF1FD /* RSBarCodes */,
+			);
+			path = Third;
+			sourceTree = "<group>";
+		};
+		65C9D74C1FE75600002EF1FD /* RSBarCodes */ = {
+			isa = PBXGroup;
+			children = (
+				65C9D74D1FE75600002EF1FD /* RSEANGenerator.swift */,
+				65C9D74E1FE75600002EF1FD /* RSUnifiedCodeValidator.swift */,
+				65C9D74F1FE75600002EF1FD /* UIColorExtension.swift */,
+				65C9D7501FE75600002EF1FD /* RSCode39Mod43Generator.swift */,
+				65C9D7511FE75600002EF1FD /* RSCode39Generator.swift */,
+				65C9D7521FE75600002EF1FD /* RSCodeReaderViewController.swift */,
+				65C9D7531FE75600002EF1FD /* RSITF14Generator.swift */,
+				65C9D7551FE75600002EF1FD /* RSCodeGenerator.swift */,
+				65C9D7561FE75600002EF1FD /* RSCodeDataMatrixGenerator.swift */,
+				65C9D7571FE75600002EF1FD /* RSBarcodes-Bridging-Header.h */,
+				65C9D7581FE75600002EF1FD /* RSCode128Generator.swift */,
+				65C9D7591FE75600002EF1FD /* RSUnifiedCodeGenerator.swift */,
+				65C9D75A1FE75600002EF1FD /* RSCodeLayer.swift */,
+				65C9D75B1FE75600002EF1FD /* RSCornersLayer.swift */,
+				65C9D75C1FE75600002EF1FD /* RSUPCEGenerator.swift */,
+				65C9D75D1FE75600002EF1FD /* RSCode93Generator.swift */,
+				65C9D75E1FE75600002EF1FD /* RSFocusMarkLayer.swift */,
+				65C9D75F1FE75600002EF1FD /* StringExtension.swift */,
+				65C9D7601FE75600002EF1FD /* RSExtendedCode39Generator.swift */,
+				65C9D7621FE75600002EF1FD /* RSITFGenerator.swift */,
+			);
+			path = RSBarCodes;
 			sourceTree = "<group>";
 		};
 		65F7DB1B1FE139D3009562F3 /* About */ = {
@@ -277,19 +352,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65C9D7661FE75600002EF1FD /* UIColorExtension.swift in Sources */,
+				65C9D7741FE75600002EF1FD /* StringExtension.swift in Sources */,
 				657ADBA51FDFF52B00EC60FB /* AboutViewController.swift in Sources */,
+				65C9D7731FE75600002EF1FD /* RSFocusMarkLayer.swift in Sources */,
+				65C9D76E1FE75600002EF1FD /* RSUnifiedCodeGenerator.swift in Sources */,
+				65C9D7651FE75600002EF1FD /* RSUnifiedCodeValidator.swift in Sources */,
+				65C9D76B1FE75600002EF1FD /* RSCodeGenerator.swift in Sources */,
+				65C9D76F1FE75600002EF1FD /* RSCodeLayer.swift in Sources */,
+				65C9D7671FE75600002EF1FD /* RSCode39Mod43Generator.swift in Sources */,
 				655939C91FDFC1A700E1031C /* ScanHistoryViewController.swift in Sources */,
 				65705D2E1FE269F10048D062 /* ScanQRCodeDetailViewController.swift in Sources */,
 				65705D341FE3B17B0048D062 /* QRString.swift in Sources */,
 				6556DD6D1FE0B6C9002AA4EA /* SettingsViewController.swift in Sources */,
 				65C9D74A1FE3CE5D002EF1FD /* ScanFaceDetailViewController.swift in Sources */,
+				65C9D7701FE75600002EF1FD /* RSCornersLayer.swift in Sources */,
+				65C9D7711FE75600002EF1FD /* RSUPCEGenerator.swift in Sources */,
 				65C9D7481FE3C88B002EF1FD /* ScanBarCodeDetailViewController.swift in Sources */,
+				65C9D7771FE75600002EF1FD /* RSITFGenerator.swift in Sources */,
+				65C9D7681FE75600002EF1FD /* RSCode39Generator.swift in Sources */,
+				65C9D76A1FE75600002EF1FD /* RSITF14Generator.swift in Sources */,
 				65705D2B1FE266F50048D062 /* ScanDetailFactory.swift in Sources */,
 				6556DD701FE0C51E002AA4EA /* ScanHistoryTableViewCell.swift in Sources */,
+				65C9D7721FE75600002EF1FD /* RSCode93Generator.swift in Sources */,
 				655939B51FDFC13E00E1031C /* DevScan.xcdatamodeld in Sources */,
 				655939B21FDFC13E00E1031C /* AppDelegate.swift in Sources */,
 				655939CB1FDFC34500E1031C /* ScanViewController.swift in Sources */,
+				65C9D7641FE75600002EF1FD /* RSEANGenerator.swift in Sources */,
 				655939CE1FDFDAF600E1031C /* CoreDataCenter.swift in Sources */,
+				65C9D7691FE75600002EF1FD /* RSCodeReaderViewController.swift in Sources */,
+				65C9D76D1FE75600002EF1FD /* RSCode128Generator.swift in Sources */,
+				65C9D76C1FE75600002EF1FD /* RSCodeDataMatrixGenerator.swift in Sources */,
+				65C9D7751FE75600002EF1FD /* RSExtendedCode39Generator.swift in Sources */,
 				65705D321FE373580048D062 /* ScanDetailContentTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

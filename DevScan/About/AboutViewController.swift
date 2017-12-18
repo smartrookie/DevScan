@@ -54,8 +54,11 @@ class AboutViewController: UITableViewController {
         if section == 0 {
             let view = UIView(frame: CGRect.zero)
                 let label = UILabel(frame: CGRect.zero)
-                label.text = "我们不收集或共享个人数据"
+                label.text = "我们不生产代码\n我们只是代码的搬运工"
                 label.font = UIFont.systemFont(ofSize: UIFont.systemFontSize)
+                label.contentMode = .center
+                label.textAlignment = .center
+                label.numberOfLines = 0
                 label.textColor = UIColor.lightGray
                 label.sizeToFit()
                 label.center = CGPoint(x: UIScreen.main.bounds.width / 2, y: 50)
