@@ -49,6 +49,14 @@ class ScanBarCodeDetailViewController: UITableViewController {
         return 0
     }
     
+    
+    override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        if section == 0 {
+            return "长按拷贝"
+        }
+        return nil
+    }
+    
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 0 {
             let view = UIView(frame: CGRect.zero)
@@ -78,5 +86,28 @@ class ScanBarCodeDetailViewController: UITableViewController {
         
         
         return UITableViewCell(style: .default, reuseIdentifier: nil)
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, shouldShowMenuForRowAt indexPath: IndexPath) -> Bool {
+        let section = indexPath.section
+        let row = indexPath.row
+        if section == 0 && row == 0 {
+            return true
+        }
+        return false
+    }
+    
+    override func tableView(_ tableView: UITableView, canPerformAction action: Selector, forRowAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
+        if action == #selector(copy(_:)) {
+            return true
+        }
+        return false
+    }
+    
+    override func tableView(_ tableView: UITableView, performAction action: Selector, forRowAt indexPath: IndexPath, withSender sender: Any?) {
+        if action == #selector(copy(_:)) {
+            UIPasteboard.general.string = contentCell.contentLabel.text
+        }
     }
 }

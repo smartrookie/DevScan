@@ -14,6 +14,7 @@ class ScanQRCodeDetailViewController: UITableViewController {
     var metaDataObject : DSMetadataObject?
     let contentCell = ScanDetailContentTableViewCell(style: .default, reuseIdentifier: nil)
     let qrImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 180, height: 180))
+    var isUrl : Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,6 +32,21 @@ class ScanQRCodeDetailViewController: UITableViewController {
         qrImageView.image = UIImage(cgImage: EFQRCode.generate(content: (metaDataObject?.stringValue)!)!)
         
         contentCell.configCell(object: metaDataObject!)
+        
+        let regex = "[a-zA-z]+://[^\\s]*"
+        let isUrlPredicate = NSPredicate(format: "SELF MATCHES %@", regex)
+        isUrl = isUrlPredicate.evaluate(with: metaDataObject?.stringValue!)
+        
+        if isUrl {
+            let menu = UIMenuItem(title: "Safari", action: #selector(openInSafari(_:)))
+            let menuController = UIMenuController.shared
+            menuController.menuItems = [menu]
+            menuController.update()
+        }
+    }
+    
+    @objc func openInSafari(_ sender: Any) {
+        //
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,6 +82,17 @@ class ScanQRCodeDetailViewController: UITableViewController {
         return nil
     }
 
+    override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        if section == 0 {
+            if isUrl {
+                return "长按拷贝或在Safari中打开"
+            } else {
+                return "长按拷贝"
+            }
+        }
+        return nil
+    }
+
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 && indexPath.row == 0 {
             return contentCell.height
@@ -83,6 +110,32 @@ class ScanQRCodeDetailViewController: UITableViewController {
         
         return UITableViewCell(style: .default, reuseIdentifier: nil)
     }
+    
+    override func tableView(_ tableView: UITableView, shouldShowMenuForRowAt indexPath: IndexPath) -> Bool {
+        let section = indexPath.section
+        let row = indexPath.row
+        if section == 0 && row == 0 {
+            return true
+        }
+        return false
+    }
+    
+    override func tableView(_ tableView: UITableView, canPerformAction action: Selector, forRowAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
+        if action == #selector(copy(_:)) {
+            return true
+        }
+        if action == #selector(openInSafari(_:)) {
+            return isUrl
+        }
+        return false
+    }
+    
+    override func tableView(_ tableView: UITableView, performAction action: Selector, forRowAt indexPath: IndexPath, withSender sender: Any?) {
+        if action == #selector(copy(_:)) {
+            UIPasteboard.general.string = contentCell.contentLabel.text
+        }
+    }
+    
 }
 
 

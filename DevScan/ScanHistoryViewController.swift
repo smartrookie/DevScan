@@ -12,7 +12,6 @@ import CoreData
 class ScanHistoryViewController: UITableViewController , NSFetchedResultsControllerDelegate{
     
     var managedObjectContext : NSManagedObjectContext? = nil
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "DevScan"
@@ -27,6 +26,11 @@ class ScanHistoryViewController: UITableViewController , NSFetchedResultsControl
         navigationItem.rightBarButtonItem = rightBarButton
         
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
+        let menu = UIMenuItem(title: "Safari", action: #selector(openInSafari(_:)))
+        let menuController = UIMenuController.shared
+        menuController.menuItems = [menu]
+        menuController.update()
     }
     
     @objc func scanCamera() {
@@ -62,12 +66,13 @@ class ScanHistoryViewController: UITableViewController , NSFetchedResultsControl
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let event = fetchedResultsController.object(at: indexPath)
-        configureCell(cell, withObject: event)
+        configureCell(cell as! ScanHistoryTableViewCell, withObject: event)
 
         return cell
     }
     
-    func configureCell(_ cell: UITableViewCell, withObject object: DSMetadataObject) {
+    func configureCell(_ cell: ScanHistoryTableViewCell, withObject object: DSMetadataObject) {
+        cell.metaDataObject = object
         cell.textLabel!.text = object.type!.description
         cell.detailTextLabel?.text = object.stringValue?.description
         
@@ -188,9 +193,9 @@ class ScanHistoryViewController: UITableViewController , NSFetchedResultsControl
         case .delete:
             tableView.deleteRows(at: [indexPath!], with: .fade)
         case .update:
-            configureCell(tableView.cellForRow(at: indexPath!)!, withObject: anObject as! DSMetadataObject)
+            configureCell(tableView.cellForRow(at: indexPath!)! as! ScanHistoryTableViewCell, withObject: anObject as! DSMetadataObject)
         case .move:
-            configureCell(tableView.cellForRow(at: indexPath!)!, withObject: anObject as! DSMetadataObject)
+            configureCell(tableView.cellForRow(at: indexPath!)! as! ScanHistoryTableViewCell, withObject: anObject as! DSMetadataObject)
             tableView.moveRow(at: indexPath!, to: newIndexPath!)
         }
     }
@@ -207,6 +212,38 @@ class ScanHistoryViewController: UITableViewController , NSFetchedResultsControl
      tableView.reloadData()
      }
      */
+    
+    override func tableView(_ tableView: UITableView, shouldShowMenuForRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    
+    @objc func openInSafari(_ sender: Any) {
+        //
+    }
+    
+    override func tableView(_ tableView: UITableView, canPerformAction action: Selector, forRowAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
+        //share
+        if action == #selector(copy(_:)) {
+            return true
+        }
+        if action == #selector(openInSafari(_:)) {
+            let regex = "[a-zA-z]+://[^\\s]*"
+            let isUrlPredicate = NSPredicate(format: "SELF MATCHES %@", regex)
+            let metaDataObject = fetchedResultsController.object(at: indexPath)
+            let isUrl = isUrlPredicate.evaluate(with: metaDataObject.stringValue!)
+            return isUrl
+        }
+        
+        return false
+    }
+    
+    override func tableView(_ tableView: UITableView, performAction action: Selector, forRowAt indexPath: IndexPath, withSender sender: Any?) {
+        if action == #selector(copy(_:)) {
+            let event = fetchedResultsController.object(at: indexPath)
+            UIPasteboard.general.string = event.stringValue
+        }
+    }
 
 }
 

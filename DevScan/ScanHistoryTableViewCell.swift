@@ -9,6 +9,8 @@
 import UIKit
 
 class ScanHistoryTableViewCell: UITableViewCell {
+    
+    var metaDataObject : DSMetadataObject?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -17,8 +19,11 @@ class ScanHistoryTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
-        
-        
+    }
+    
+    @objc func openInSafari(_ sender: Any) {
+        let url = URL(string: (metaDataObject?.stringValue!)!)
+        UIApplication.shared.open(url!, options: [:], completionHandler: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
