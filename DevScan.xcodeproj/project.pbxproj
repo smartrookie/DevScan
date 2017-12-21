@@ -16,13 +16,6 @@
 		655939C11FDFC13E00E1031C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 655939BF1FDFC13E00E1031C /* LaunchScreen.storyboard */; };
 		655939C91FDFC1A700E1031C /* ScanHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655939C81FDFC1A700E1031C /* ScanHistoryViewController.swift */; };
 		655939CB1FDFC34500E1031C /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655939CA1FDFC34500E1031C /* ScanViewController.swift */; };
-		655939CE1FDFDAF600E1031C /* CoreDataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655939CD1FDFDAF600E1031C /* CoreDataCenter.swift */; };
-		65705D2B1FE266F50048D062 /* ScanDetailFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65705D2A1FE266F50048D062 /* ScanDetailFactory.swift */; };
-		65705D2E1FE269F10048D062 /* ScanQRCodeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65705D2D1FE269F10048D062 /* ScanQRCodeDetailViewController.swift */; };
-		65705D321FE373580048D062 /* ScanDetailContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65705D311FE373580048D062 /* ScanDetailContentTableViewCell.swift */; };
-		657ADBA51FDFF52B00EC60FB /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657ADBA41FDFF52B00EC60FB /* AboutViewController.swift */; };
-		65C9D7481FE3C88B002EF1FD /* ScanBarCodeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C9D7471FE3C88B002EF1FD /* ScanBarCodeDetailViewController.swift */; };
-		65C9D74A1FE3CE5D002EF1FD /* ScanFaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C9D7491FE3CE5D002EF1FD /* ScanFaceDetailViewController.swift */; };
 		65C9D7641FE75600002EF1FD /* RSEANGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C9D74D1FE75600002EF1FD /* RSEANGenerator.swift */; };
 		65C9D7651FE75600002EF1FD /* RSUnifiedCodeValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C9D74E1FE75600002EF1FD /* RSUnifiedCodeValidator.swift */; };
 		65C9D7661FE75600002EF1FD /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C9D74F1FE75600002EF1FD /* UIColorExtension.swift */; };
@@ -42,6 +35,13 @@
 		65C9D7741FE75600002EF1FD /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C9D75F1FE75600002EF1FD /* StringExtension.swift */; };
 		65C9D7751FE75600002EF1FD /* RSExtendedCode39Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C9D7601FE75600002EF1FD /* RSExtendedCode39Generator.swift */; };
 		65C9D7771FE75600002EF1FD /* RSITFGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C9D7621FE75600002EF1FD /* RSITFGenerator.swift */; };
+		DE29E9C81FEC019F003AFB88 /* ScanDetailFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE29E9BF1FEC019F003AFB88 /* ScanDetailFactory.swift */; };
+		DE29E9C91FEC019F003AFB88 /* ScanFaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE29E9C01FEC019F003AFB88 /* ScanFaceDetailViewController.swift */; };
+		DE29E9CA1FEC019F003AFB88 /* ScanDetailContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE29E9C11FEC019F003AFB88 /* ScanDetailContentTableViewCell.swift */; };
+		DE29E9CB1FEC019F003AFB88 /* ScanBarCodeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE29E9C21FEC019F003AFB88 /* ScanBarCodeDetailViewController.swift */; };
+		DE29E9CC1FEC019F003AFB88 /* ScanQRCodeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE29E9C31FEC019F003AFB88 /* ScanQRCodeDetailViewController.swift */; };
+		DE29E9CD1FEC019F003AFB88 /* CoreDataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE29E9C51FEC019F003AFB88 /* CoreDataCenter.swift */; };
+		DE29E9CE1FEC019F003AFB88 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE29E9C71FEC019F003AFB88 /* AboutViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,13 +58,6 @@
 		655939C21FDFC13E00E1031C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		655939C81FDFC1A700E1031C /* ScanHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanHistoryViewController.swift; sourceTree = "<group>"; };
 		655939CA1FDFC34500E1031C /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
-		655939CD1FDFDAF600E1031C /* CoreDataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataCenter.swift; sourceTree = "<group>"; };
-		65705D2A1FE266F50048D062 /* ScanDetailFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanDetailFactory.swift; sourceTree = "<group>"; };
-		65705D2D1FE269F10048D062 /* ScanQRCodeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanQRCodeDetailViewController.swift; sourceTree = "<group>"; };
-		65705D311FE373580048D062 /* ScanDetailContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanDetailContentTableViewCell.swift; sourceTree = "<group>"; };
-		657ADBA41FDFF52B00EC60FB /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
-		65C9D7471FE3C88B002EF1FD /* ScanBarCodeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanBarCodeDetailViewController.swift; sourceTree = "<group>"; };
-		65C9D7491FE3CE5D002EF1FD /* ScanFaceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanFaceDetailViewController.swift; sourceTree = "<group>"; };
 		65C9D74D1FE75600002EF1FD /* RSEANGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSEANGenerator.swift; sourceTree = "<group>"; };
 		65C9D74E1FE75600002EF1FD /* RSUnifiedCodeValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSUnifiedCodeValidator.swift; sourceTree = "<group>"; };
 		65C9D74F1FE75600002EF1FD /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
@@ -85,6 +78,13 @@
 		65C9D75F1FE75600002EF1FD /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		65C9D7601FE75600002EF1FD /* RSExtendedCode39Generator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSExtendedCode39Generator.swift; sourceTree = "<group>"; };
 		65C9D7621FE75600002EF1FD /* RSITFGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSITFGenerator.swift; sourceTree = "<group>"; };
+		DE29E9BF1FEC019F003AFB88 /* ScanDetailFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanDetailFactory.swift; sourceTree = "<group>"; };
+		DE29E9C01FEC019F003AFB88 /* ScanFaceDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanFaceDetailViewController.swift; sourceTree = "<group>"; };
+		DE29E9C11FEC019F003AFB88 /* ScanDetailContentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanDetailContentTableViewCell.swift; sourceTree = "<group>"; };
+		DE29E9C21FEC019F003AFB88 /* ScanBarCodeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanBarCodeDetailViewController.swift; sourceTree = "<group>"; };
+		DE29E9C31FEC019F003AFB88 /* ScanQRCodeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanQRCodeDetailViewController.swift; sourceTree = "<group>"; };
+		DE29E9C51FEC019F003AFB88 /* CoreDataCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataCenter.swift; sourceTree = "<group>"; };
+		DE29E9C71FEC019F003AFB88 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		FC8A72E62AA30483E859AF77 /* Pods_DevScan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DevScan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -136,37 +136,15 @@
 				6556DD6F1FE0C51E002AA4EA /* ScanHistoryTableViewCell.swift */,
 				655939CA1FDFC34500E1031C /* ScanViewController.swift */,
 				6556DD6C1FE0B6C9002AA4EA /* SettingsViewController.swift */,
-				65705D2C1FE2696B0048D062 /* ScanDetailController */,
-				655939CC1FDFDAD700E1031C /* DB */,
-				65F7DB1B1FE139D3009562F3 /* About */,
+				DE29E9C61FEC019F003AFB88 /* About */,
+				DE29E9C41FEC019F003AFB88 /* DB */,
+				DE29E9BE1FEC019F003AFB88 /* ScanDetailController */,
 				655939BD1FDFC13E00E1031C /* Assets.xcassets */,
 				655939BF1FDFC13E00E1031C /* LaunchScreen.storyboard */,
 				655939C21FDFC13E00E1031C /* Info.plist */,
 				655939B31FDFC13E00E1031C /* DevScan.xcdatamodeld */,
 			);
 			path = DevScan;
-			sourceTree = "<group>";
-		};
-		655939CC1FDFDAD700E1031C /* DB */ = {
-			isa = PBXGroup;
-			children = (
-				655939CD1FDFDAF600E1031C /* CoreDataCenter.swift */,
-			);
-			name = DB;
-			path = ../../../../rookie/Desktop/DevScan/DevScan/DB;
-			sourceTree = "<group>";
-		};
-		65705D2C1FE2696B0048D062 /* ScanDetailController */ = {
-			isa = PBXGroup;
-			children = (
-				65705D2A1FE266F50048D062 /* ScanDetailFactory.swift */,
-				65705D2D1FE269F10048D062 /* ScanQRCodeDetailViewController.swift */,
-				65705D311FE373580048D062 /* ScanDetailContentTableViewCell.swift */,
-				65C9D7471FE3C88B002EF1FD /* ScanBarCodeDetailViewController.swift */,
-				65C9D7491FE3CE5D002EF1FD /* ScanFaceDetailViewController.swift */,
-			);
-			name = ScanDetailController;
-			path = ../../../../rookie/Desktop/DevScan/DevScan/ScanDetailController;
 			sourceTree = "<group>";
 		};
 		65C9D74B1FE755C0002EF1FD /* Third */ = {
@@ -204,13 +182,32 @@
 			path = RSBarCodes;
 			sourceTree = "<group>";
 		};
-		65F7DB1B1FE139D3009562F3 /* About */ = {
+		DE29E9BE1FEC019F003AFB88 /* ScanDetailController */ = {
 			isa = PBXGroup;
 			children = (
-				657ADBA41FDFF52B00EC60FB /* AboutViewController.swift */,
+				DE29E9BF1FEC019F003AFB88 /* ScanDetailFactory.swift */,
+				DE29E9C01FEC019F003AFB88 /* ScanFaceDetailViewController.swift */,
+				DE29E9C11FEC019F003AFB88 /* ScanDetailContentTableViewCell.swift */,
+				DE29E9C21FEC019F003AFB88 /* ScanBarCodeDetailViewController.swift */,
+				DE29E9C31FEC019F003AFB88 /* ScanQRCodeDetailViewController.swift */,
 			);
-			name = About;
-			path = ../../../../rookie/Desktop/DevScan/DevScan/About;
+			path = ScanDetailController;
+			sourceTree = "<group>";
+		};
+		DE29E9C41FEC019F003AFB88 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				DE29E9C51FEC019F003AFB88 /* CoreDataCenter.swift */,
+			);
+			path = DB;
+			sourceTree = "<group>";
+		};
+		DE29E9C61FEC019F003AFB88 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				DE29E9C71FEC019F003AFB88 /* AboutViewController.swift */,
+			);
+			path = About;
 			sourceTree = "<group>";
 		};
 		F5D0C1E476E419F6C6581515 /* Frameworks */ = {
@@ -351,36 +348,36 @@
 			files = (
 				65C9D7661FE75600002EF1FD /* UIColorExtension.swift in Sources */,
 				65C9D7741FE75600002EF1FD /* StringExtension.swift in Sources */,
-				657ADBA51FDFF52B00EC60FB /* AboutViewController.swift in Sources */,
 				65C9D7731FE75600002EF1FD /* RSFocusMarkLayer.swift in Sources */,
 				65C9D76E1FE75600002EF1FD /* RSUnifiedCodeGenerator.swift in Sources */,
 				65C9D7651FE75600002EF1FD /* RSUnifiedCodeValidator.swift in Sources */,
 				65C9D76B1FE75600002EF1FD /* RSCodeGenerator.swift in Sources */,
+				DE29E9CD1FEC019F003AFB88 /* CoreDataCenter.swift in Sources */,
 				65C9D76F1FE75600002EF1FD /* RSCodeLayer.swift in Sources */,
 				65C9D7671FE75600002EF1FD /* RSCode39Mod43Generator.swift in Sources */,
 				655939C91FDFC1A700E1031C /* ScanHistoryViewController.swift in Sources */,
-				65705D2E1FE269F10048D062 /* ScanQRCodeDetailViewController.swift in Sources */,
 				6556DD6D1FE0B6C9002AA4EA /* SettingsViewController.swift in Sources */,
-				65C9D74A1FE3CE5D002EF1FD /* ScanFaceDetailViewController.swift in Sources */,
 				65C9D7701FE75600002EF1FD /* RSCornersLayer.swift in Sources */,
 				65C9D7711FE75600002EF1FD /* RSUPCEGenerator.swift in Sources */,
-				65C9D7481FE3C88B002EF1FD /* ScanBarCodeDetailViewController.swift in Sources */,
+				DE29E9CC1FEC019F003AFB88 /* ScanQRCodeDetailViewController.swift in Sources */,
+				DE29E9CE1FEC019F003AFB88 /* AboutViewController.swift in Sources */,
 				65C9D7771FE75600002EF1FD /* RSITFGenerator.swift in Sources */,
 				65C9D7681FE75600002EF1FD /* RSCode39Generator.swift in Sources */,
+				DE29E9C81FEC019F003AFB88 /* ScanDetailFactory.swift in Sources */,
 				65C9D76A1FE75600002EF1FD /* RSITF14Generator.swift in Sources */,
-				65705D2B1FE266F50048D062 /* ScanDetailFactory.swift in Sources */,
 				6556DD701FE0C51E002AA4EA /* ScanHistoryTableViewCell.swift in Sources */,
+				DE29E9C91FEC019F003AFB88 /* ScanFaceDetailViewController.swift in Sources */,
 				65C9D7721FE75600002EF1FD /* RSCode93Generator.swift in Sources */,
+				DE29E9CB1FEC019F003AFB88 /* ScanBarCodeDetailViewController.swift in Sources */,
 				655939B51FDFC13E00E1031C /* DevScan.xcdatamodeld in Sources */,
 				655939B21FDFC13E00E1031C /* AppDelegate.swift in Sources */,
 				655939CB1FDFC34500E1031C /* ScanViewController.swift in Sources */,
 				65C9D7641FE75600002EF1FD /* RSEANGenerator.swift in Sources */,
-				655939CE1FDFDAF600E1031C /* CoreDataCenter.swift in Sources */,
 				65C9D7691FE75600002EF1FD /* RSCodeReaderViewController.swift in Sources */,
 				65C9D76D1FE75600002EF1FD /* RSCode128Generator.swift in Sources */,
+				DE29E9CA1FEC019F003AFB88 /* ScanDetailContentTableViewCell.swift in Sources */,
 				65C9D76C1FE75600002EF1FD /* RSCodeDataMatrixGenerator.swift in Sources */,
 				65C9D7751FE75600002EF1FD /* RSExtendedCode39Generator.swift in Sources */,
-				65705D321FE373580048D062 /* ScanDetailContentTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
