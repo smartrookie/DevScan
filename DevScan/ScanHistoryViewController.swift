@@ -34,10 +34,27 @@ class ScanHistoryViewController: UITableViewController , NSFetchedResultsControl
     }
     
     @objc func scanCamera() {
-        let scanViewController = ScanViewController()
-        scanViewController.managedObjectContext = self.managedObjectContext
-        let navigationController = UINavigationController(rootViewController: scanViewController)
-        present(navigationController, animated: true, completion: nil)
+        //TARGET_IPHONE_SIMULATOR
+        #if arch(i386) || arch(x86_64)
+            let alert = UIAlertController(title: nil, message: "不支持模拟器", preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "确定", style: .default, handler:nil)
+            alert.addAction(alertAction)
+            present(alert, animated: true, completion: nil)
+        #else
+            let scanViewController = ScanViewController()
+            scanViewController.managedObjectContext = self.managedObjectContext
+            let navigationController = UINavigationController(rootViewController: scanViewController)
+            present(navigationController, animated: true, completion: nil)
+        #endif
+//        let authStatus =  AVCaptureDevice.authorizationStatus(for: .video)
+//        switch authStatus {
+//        case .authorized:
+//
+//            break
+//        case .restricted , .denied , .notDetermined:
+//
+//            break
+//        }
     }
     
     @objc func settingPage() {

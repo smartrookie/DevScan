@@ -27,6 +27,9 @@ class ScanViewController: UIViewController {
         navigationItem.rightBarButtonItem = rightBarButton
         
         let device = AVCaptureDevice.default(for: .video)
+        
+        
+        
         var input : AVCaptureDeviceInput? = nil
         do {
             input = try AVCaptureDeviceInput(device: device!)
@@ -72,6 +75,15 @@ class ScanViewController: UIViewController {
             output.rectOfInterest = scanPreviewLayer.metadataOutputRectConverted(fromLayerRect: self.view.bounds)
         }
     }
+    
+    
+    func initialCamera() {
+        
+    }
+    
+    
+    
+    
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
