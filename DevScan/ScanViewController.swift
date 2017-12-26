@@ -19,29 +19,48 @@ class ScanViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "扫描"
-        
+        view.backgroundColor = UIColor.black
+
         let leftBarButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelAction))
         navigationItem.leftBarButtonItem = leftBarButton
         
         let rightBarButton = UIBarButtonItem(image:UIImage(named:"相册"), style:.plain, target:self, action:#selector(openAlbumAction))
         navigationItem.rightBarButtonItem = rightBarButton
         
+        let authStatus =  AVCaptureDevice.authorizationStatus(for: .video)
+        switch authStatus {
+            case .authorized:
+                initialCamera()
+            break
+            case .restricted , .denied , .notDetermined:
+                authorizedAlert()
+            break
+        }
+    }
+    
+    func authorizedAlert() {
+        let alertController = UIAlertController(title: nil, message: "请在iPhone的“设置-隐私”选项中，允许访问你的摄像头", preferredStyle: .alert)
+        let commit = UIAlertAction(title: "确定", style: .default, handler: nil)
+        alertController.addAction(commit)
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func initialCamera() {
         let device = AVCaptureDevice.default(for: .video)
-        
-        
         
         var input : AVCaptureDeviceInput? = nil
         do {
             input = try AVCaptureDeviceInput(device: device!)
         } catch {}
         
-        let output = metadataOutput
-        
-        scanSession.canSetSessionPreset(.high)
-        
         if scanSession.canAddInput(input!) {
             scanSession.addInput(input!)
         }
+        
+        
+        let output = metadataOutput
+        
+        scanSession.canSetSessionPreset(.high)
         
         if scanSession.canAddOutput(output) {
             scanSession.addOutput(output)
@@ -62,7 +81,7 @@ class ScanViewController: UIViewController {
         scanPreviewLayer.frame = view.bounds
         
         view.layer.addSublayer(scanPreviewLayer)
-
+        
         if (device?.isFocusModeSupported(.autoFocus))! {
             do {
                 try input?.device.lockForConfiguration()
@@ -75,15 +94,6 @@ class ScanViewController: UIViewController {
             output.rectOfInterest = scanPreviewLayer.metadataOutputRectConverted(fromLayerRect: self.view.bounds)
         }
     }
-    
-    
-    func initialCamera() {
-        
-    }
-    
-    
-    
-    
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -114,7 +124,6 @@ class ScanViewController: UIViewController {
         if result is AVMetadataMachineReadableCodeObject {
             object.stringValue = (result as! AVMetadataMachineReadableCodeObject).stringValue
         }
-        
         do {
             try context.save()
         } catch {
@@ -195,7 +204,6 @@ extension ScanViewController : UIImagePickerControllerDelegate,UINavigationContr
             insertNewObject(feature: feature)
         })
          */
-        
     }
     
     func insertNewObject(feature: CIFeature) {
@@ -215,9 +223,5 @@ extension ScanViewController : UIImagePickerControllerDelegate,UINavigationContr
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
-        
-        
     }
-    
-    
 }

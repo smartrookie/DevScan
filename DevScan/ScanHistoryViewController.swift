@@ -14,8 +14,7 @@ class ScanHistoryViewController: UITableViewController , NSFetchedResultsControl
     var managedObjectContext : NSManagedObjectContext? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "DevScan"
-        
+        title = "扫一扫"
         self.clearsSelectionOnViewWillAppear = true
         
         let leftBarButton = UIBarButtonItem(image:UIImage(named:"扫一扫"), style:.plain, target: self, action: #selector(scanCamera))
@@ -46,15 +45,6 @@ class ScanHistoryViewController: UITableViewController , NSFetchedResultsControl
             let navigationController = UINavigationController(rootViewController: scanViewController)
             present(navigationController, animated: true, completion: nil)
         #endif
-//        let authStatus =  AVCaptureDevice.authorizationStatus(for: .video)
-//        switch authStatus {
-//        case .authorized:
-//
-//            break
-//        case .restricted , .denied , .notDetermined:
-//
-//            break
-//        }
     }
     
     @objc func settingPage() {
