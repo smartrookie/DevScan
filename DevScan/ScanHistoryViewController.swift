@@ -14,7 +14,7 @@ class ScanHistoryViewController: UITableViewController , NSFetchedResultsControl
     var managedObjectContext : NSManagedObjectContext? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "扫一扫"
+        title = "清扫"
         self.clearsSelectionOnViewWillAppear = true
         
         let leftBarButton = UIBarButtonItem(image:UIImage(named:"扫一扫"), style:.plain, target: self, action: #selector(scanCamera))

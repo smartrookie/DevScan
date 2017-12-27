@@ -510,6 +510,7 @@
 			baseConfigurationReference = 356CFDC9577DBC67487E5064 /* Pods-DevScan.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = ERETPS6T86;
 				INFOPLIST_FILE = DevScan/Info.plist;
@@ -529,6 +530,7 @@
 			baseConfigurationReference = 0319923CC21B541E5A8EBD98 /* Pods-DevScan.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = ERETPS6T86;
 				INFOPLIST_FILE = DevScan/Info.plist;
@@ -536,8 +538,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.develop.scan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f4b871a4-5bdd-4599-b436-388a17cd2505";
-				PROVISIONING_PROFILE_SPECIFIER = sunguoqing;
+				PROVISIONING_PROFILE = "e3e5ed02-71a3-4b49-a39a-a63dba756e8d";
+				PROVISIONING_PROFILE_SPECIFIER = distribution_scan;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
