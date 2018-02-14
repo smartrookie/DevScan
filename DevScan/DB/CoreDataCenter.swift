@@ -93,6 +93,24 @@ class CoreDataCenter {
                 userDefault.setValue(true, forKey: type.rawValue)
             })
             
+            let context = self.persistentContainer.viewContext
+            var object = DSMetadataObject(context: context)
+            object.type = "org.iso.QRCode"
+            object.stringValue = "http://www.baidu.com"
+            object.timestamp = Date()
+            
+            object = DSMetadataObject(context: context)
+            object.type = "org.iso.Code39"
+            object.stringValue = "001183199710201801188493"
+            object.timestamp = Date()
+            
+            do {
+                try context.save()
+            } catch {
+                let nserror = error as NSError
+                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            }
+            
         }
     }
     

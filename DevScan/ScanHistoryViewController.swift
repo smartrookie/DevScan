@@ -95,7 +95,8 @@ class ScanHistoryViewController: UITableViewController , NSFetchedResultsControl
                     "org.iso.Code39",
                     "org.iso.Code93",
                     "org.iso.Code128",
-                    "org.iso.Code39Mod43":
+                    "org.iso.Code39Mod43",
+                    "org.ansi.Interleaved2of5":
             iconName = "条形码扫描"
         default:
             iconName = ""

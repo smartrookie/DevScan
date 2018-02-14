@@ -23,7 +23,8 @@ class ScanDetailFactory {
                 || metaObject.type == "org.iso.Code39"
                 || metaObject.type == "org.iso.Code93"
                 || metaObject.type == "org.iso.Code128"
-                || metaObject.type == "org.iso.Code39Mod43" {
+                || metaObject.type == "org.iso.Code39Mod43"
+                || metaObject.type == "org.ansi.Interleaved2of5" {
             let detailController = ScanBarCodeDetailViewController(style: .grouped)
             detailController.metaDataObject = metaObject
             return detailController
