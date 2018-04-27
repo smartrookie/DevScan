@@ -29,10 +29,10 @@ class ScanViewController: UIViewController {
         
         let authStatus =  AVCaptureDevice.authorizationStatus(for: .video)
         switch authStatus {
-            case .authorized:
+            case .authorized, .notDetermined,.restricted:
                 initialCamera()
             break
-            case .restricted , .denied , .notDetermined:
+            case .denied :
                 authorizedAlert()
             break
         }

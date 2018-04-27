@@ -14,7 +14,7 @@ class ScanHistoryViewController: UITableViewController , NSFetchedResultsControl
     var managedObjectContext : NSManagedObjectContext? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "清扫"
+        title = "扫过"
         self.clearsSelectionOnViewWillAppear = true
         
         let leftBarButton = UIBarButtonItem(image:UIImage(named:"扫一扫"), style:.plain, target: self, action: #selector(scanCamera))
@@ -89,8 +89,7 @@ class ScanHistoryViewController: UITableViewController , NSFetchedResultsControl
             iconName = "二维码扫描"
         case "face":
             iconName = "人脸扫描"
-        case        "org.iso.Code128",
-                    "org.gs1.EAN-8",
+        case        "org.gs1.EAN-8",
                     "org.gs1.EAN-13",
                     "org.iso.Code39",
                     "org.iso.Code93",
